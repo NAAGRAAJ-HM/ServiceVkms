@@ -2,6 +2,6 @@
 
 class_Vkms Vkms;
 
-void class_Vkms::InitFunction(void){
+FUNC(void, VKMS_CODE) class_Vkms::InitFunction(void){
 }
 
