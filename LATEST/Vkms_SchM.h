@@ -1,20 +1,18 @@
+#pragma once
 /*****************************************************/
-/* File   : Vkms.cpp                                 */
+/* File   : Vkms_SchM.h                              */
 /* Author : Naagraaj HM                              */
 /*****************************************************/
 
 /*****************************************************/
 /* #INCLUDES                                         */
 /*****************************************************/
-#include "Vkms.h"
+#include "Compiler_Cfg_Vkms.h"
 
-#include "Vkms_EcuM.h"
-#include "Vkms_SchM.h"
+#include "SchM_Client.h"
 
 /*****************************************************/
 /* #DEFINES                                          */
-/*****************************************************/
-
 /*****************************************************/
 
 /*****************************************************/
@@ -24,6 +22,13 @@
 /*****************************************************/
 /* TYPEDEFS                                          */
 /*****************************************************/
+class class_Vkms_SchM : public class_SchM_Client{
+   public:
+/*****************************************************/
+/* FUNCTIONS                                         */
+/*****************************************************/
+      FUNC(void, VKMS_CODE) MainFunction(void);
+};
 
 /*****************************************************/
 /* CONSTS                                            */
@@ -36,20 +41,7 @@
 /*****************************************************/
 /* OBJECTS                                           */
 /*****************************************************/
-class_Vkms_EcuM Vkms_EcuM;
-class_EcuM_Client *EcuM_Client_ptr_Vkms = &Vkms_EcuM;
-class_Vkms_SchM Vkms_SchM;
-class_SchM_Client *SchM_Client_ptr_Vkms = &Vkms_SchM;
-class_Vkms Vkms;
-
-/*****************************************************/
-/* FUNCTIONS                                         */
-/*****************************************************/
-FUNC(void, VKMS_CODE) class_Vkms_EcuM::InitFunction(void){
-}
-
-FUNC(void, VKMS_CODE) class_Vkms_SchM::MainFunction(void){
-}
+extern class_SchM_Client *SchM_Client_ptr_Vkms;
 
 /*****************************************************/
 /* EOF                                               */
