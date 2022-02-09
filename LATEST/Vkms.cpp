@@ -36,19 +36,20 @@
 /*****************************************************/
 /* OBJECTS                                           */
 /*****************************************************/
-class_Vkms_EcuM Vkms_EcuM;
-class_EcuM_Client *EcuM_Client_ptr_Vkms = &Vkms_EcuM;
-class_Vkms_SchM Vkms_SchM;
-class_SchM_Client *SchM_Client_ptr_Vkms = &Vkms_SchM;
+class_Vkms_EcuM_Init Vkms_EcuM_Init;
+class_Vkms_SchM_Main Vkms_SchM_Main;
 class_Vkms Vkms;
+
+class_EcuM_Init_Client *EcuM_Init_Client_ptr_Vkms = &Vkms_EcuM_Init;
+class_SchM_Main_Client *SchM_Main_Client_ptr_Vkms = &Vkms_SchM_Main;
 
 /*****************************************************/
 /* FUNCTIONS                                         */
 /*****************************************************/
-FUNC(void, VKMS_CODE) class_Vkms_EcuM::InitFunction(void){
+FUNC(void, VKMS_CODE) class_Vkms_EcuM_Init::InitFunction(void){
 }
 
-FUNC(void, VKMS_CODE) class_Vkms_SchM::MainFunction(void){
+FUNC(void, VKMS_CODE) class_Vkms_SchM_Main::MainFunction(void){
 }
 
 /*****************************************************/
