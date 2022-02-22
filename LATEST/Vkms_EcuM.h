@@ -22,7 +22,7 @@
 /*****************************************************/
 /* TYPEDEFS                                          */
 /*****************************************************/
-class class_Vkms_EcuM : public class_EcuM_Client{
+class interface_Vkms_EcuM : public interface_EcuM_Client{
    public:
 /*****************************************************/
 /* FUNCTIONS                                         */
@@ -41,7 +41,7 @@ class class_Vkms_EcuM : public class_EcuM_Client{
 /*****************************************************/
 /* OBJECTS                                           */
 /*****************************************************/
-extern class_EcuM_Client *EcuM_Client_ptr_Vkms;
+extern interface_Vkms_EcuM *EcuM_Client_ptr_Vkms;
 
 /*****************************************************/
 /* EOF                                               */

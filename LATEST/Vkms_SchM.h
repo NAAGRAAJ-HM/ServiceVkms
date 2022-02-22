@@ -22,7 +22,7 @@
 /*****************************************************/
 /* TYPEDEFS                                          */
 /*****************************************************/
-class class_Vkms_SchM : public class_SchM_Client{
+class interface_Vkms_SchM : public interface_SchM_Client{
    public:
 /*****************************************************/
 /* FUNCTIONS                                         */
@@ -41,7 +41,7 @@ class class_Vkms_SchM : public class_SchM_Client{
 /*****************************************************/
 /* OBJECTS                                           */
 /*****************************************************/
-extern class_SchM_Client *SchM_Client_ptr_Vkms;
+extern interface_Vkms_SchM *SchM_Client_ptr_Vkms;
 
 /*****************************************************/
 /* EOF                                               */
