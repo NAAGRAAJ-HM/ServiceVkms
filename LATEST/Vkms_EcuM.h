@@ -27,7 +27,8 @@ class interface_Vkms_EcuM : public interface_EcuM_Client{
 /*****************************************************/
 /* FUNCTIONS                                         */
 /*****************************************************/
-      FUNC(void, VKMS_CODE) InitFunction(void);
+      virtual FUNC(void, VKMS_CODE) InitFunction   (void) = 0;
+      virtual FUNC(void, VKMS_CODE) DeInitFunction (void) = 0;
 };
 
 /*****************************************************/
