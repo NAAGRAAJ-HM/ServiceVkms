@@ -24,8 +24,6 @@
 /*****************************************************/
 class module_Vkms:
       public abstract_module
-   ,  public interface_Vkms_EcuM
-   ,  public interface_Vkms_SchM
 {
    public:
       FUNC(void, VKMS_CODE) InitFunction   (void);
@@ -44,10 +42,9 @@ class module_Vkms:
 /*****************************************************/
 /* OBJECTS                                           */
 /*****************************************************/
-module_Vkms Vkms;
-
-interface_Vkms_EcuM *EcuM_Client_ptr_Vkms = &Vkms;
-interface_Vkms_SchM *SchM_Client_ptr_Vkms = &Vkms;
+module_Vkms    Vkms;
+infEcuMClient* gptrinfEcuMClient_Vkms = &Vkms;
+infSchMClient* gptrinfSchMClient_Vkms = &Vkms;
 
 /*****************************************************/
 /* FUNCTIONS                                         */
