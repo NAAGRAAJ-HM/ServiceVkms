@@ -32,7 +32,7 @@
 /*****************************************************/
 /* OBJECTS                                           */
 /*****************************************************/
-extern interface_Vkms_SchM *SchM_Client_ptr_Vkms;
+extern infSchMClient *gptrinfSchMClient_Vkms;
 
 /*****************************************************/
 /* FUNCTIONS                                         */
