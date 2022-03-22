@@ -7,7 +7,7 @@
 /* #INCLUDES                                                                  */
 /******************************************************************************/
 #include "module.h"
-#include "infVkms_Version.h"
+#include "Vkms_Cfg.h"
 #include "infVkms_EcuM.h"
 #include "infVkms_Dcm.h"
 #include "infVkms_SchM.h"
@@ -15,10 +15,19 @@
 /******************************************************************************/
 /* #DEFINES                                                                   */
 /******************************************************************************/
+#define VKMS_AR_RELEASE_MAJOR_VERSION                                          4
+#define VKMS_AR_RELEASE_MINOR_VERSION                                          3
 
 /******************************************************************************/
 /* MACROS                                                                     */
 /******************************************************************************/
+#if(VKMS_AR_RELEASE_MAJOR_VERSION != STD_AR_RELEASE_MAJOR_VERSION)
+   #error "Incompatible VKMS_AR_RELEASE_MAJOR_VERSION!"
+#endif
+
+#if(VKMS_AR_RELEASE_MINOR_VERSION != STD_AR_RELEASE_MINOR_VERSION)
+   #error "Incompatible VKMS_AR_RELEASE_MINOR_VERSION!"
+#endif
 
 /******************************************************************************/
 /* TYPEDEFS                                                                   */
@@ -61,6 +70,11 @@ FUNC(void, VKMS_CODE) module_Vkms::DeInitFunction(void){
 }
 
 FUNC(void, VKMS_CODE) module_Vkms::GetVersionInfo(void){
+#if(STD_ON == Vkms_DevErrorDetect)
+//TBD: API parameter check
+   Det_ReportError(
+   );
+#endif
 }
 
 FUNC(void, VKMS_CODE) module_Vkms::MainFunction(void){
