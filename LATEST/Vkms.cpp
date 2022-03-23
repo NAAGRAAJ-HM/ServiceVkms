@@ -40,6 +40,16 @@ class module_Vkms:
       FUNC(void, VKMS_CODE) DeInitFunction (void);
       FUNC(void, VKMS_CODE) GetVersionInfo (void);
       FUNC(void, VKMS_CODE) MainFunction   (void);
+
+   private:
+      CONST(Std_TypeVersionInfo, VKMS_CONST) VersionInfo = {
+            0x0000
+         ,  0xFFFF
+         ,  0x01
+         ,  '0'
+         ,  '1'
+         ,  '0'
+      };
 };
 
 /******************************************************************************/
