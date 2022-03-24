@@ -7,7 +7,7 @@
 /* #INCLUDES                                                                  */
 /******************************************************************************/
 #include "module.h"
-#include "Vkms_Cfg.h"
+#include "CfgVkms.h"
 #include "infVkms_EcuM.h"
 #include "infVkms_Dcm.h"
 #include "infVkms_SchM.h"
