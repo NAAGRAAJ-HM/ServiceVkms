@@ -6,11 +6,11 @@
 /******************************************************************************/
 /* #INCLUDES                                                                  */
 /******************************************************************************/
-#include "module.h"
-#include "CfgVkms.h"
-#include "infVkms_EcuM.h"
-#include "infVkms_Dcm.h"
-#include "infVkms_SchM.h"
+#include "module.hpp"
+#include "CfgVkms.hpp"
+#include "infVkms_EcuM.hpp"
+#include "infVkms_Dcm.hpp"
+#include "infVkms_SchM.hpp"
 
 /******************************************************************************/
 /* #DEFINES                                                                   */
@@ -90,7 +90,7 @@ FUNC(void, VKMS_CODE) module_Vkms::GetVersionInfo(void){
 FUNC(void, VKMS_CODE) module_Vkms::MainFunction(void){
 }
 
-#include "Vkms_Unused.h"
+#include "Vkms_Unused.hpp"
 
 /******************************************************************************/
 /* EOF                                                                        */
