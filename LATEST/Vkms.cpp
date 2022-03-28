@@ -90,7 +90,9 @@ FUNC(void, VKMS_CODE) module_Vkms::GetVersionInfo(void){
 FUNC(void, VKMS_CODE) module_Vkms::MainFunction(void){
 }
 
-#include "Vkms_Unused.hpp"
+class class_Vkms_Unused{
+   public:
+};
 
 /******************************************************************************/
 /* EOF                                                                        */
