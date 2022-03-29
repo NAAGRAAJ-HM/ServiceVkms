@@ -7,7 +7,6 @@
 /* #INCLUDES                                                                  */
 /******************************************************************************/
 #include "module.hpp"
-#include "CfgVkms.hpp"
 #include "infVkms_EcuM.hpp"
 #include "infVkms_Dcm.hpp"
 #include "infVkms_SchM.hpp"
@@ -36,37 +35,40 @@ class module_Vkms:
       public abstract_module
 {
    public:
+      module_Vkms(Std_TypeVersionInfo lVersionInfo) : abstract_module(lVersionInfo){
+      }
       FUNC(void, VKMS_CODE) InitFunction   (void);
       FUNC(void, VKMS_CODE) DeInitFunction (void);
-      FUNC(void, VKMS_CODE) GetVersionInfo (void);
       FUNC(void, VKMS_CODE) MainFunction   (void);
-
-   private:
-      CONST(Std_TypeVersionInfo, VKMS_CONST) VersionInfo = {
-            0x0000
-         ,  0xFFFF
-         ,  0x01
-         ,  '0'
-         ,  '1'
-         ,  '0'
-      };
 };
+
+extern VAR(module_Vkms, VKMS_VAR) Vkms;
 
 /******************************************************************************/
 /* CONSTS                                                                     */
 /******************************************************************************/
+CONSTP2VAR(infEcuMClient, VKMS_VAR, VKMS_CONST) gptrinfEcuMClient_Vkms = &Vkms;
+CONSTP2VAR(infDcmClient,  VKMS_VAR, VKMS_CONST) gptrinfDcmClient_Vkms  = &Vkms;
+CONSTP2VAR(infSchMClient, VKMS_VAR, VKMS_CONST) gptrinfSchMClient_Vkms = &Vkms;
 
 /******************************************************************************/
 /* PARAMS                                                                     */
 /******************************************************************************/
+#include "CfgVkms.hpp"
 
 /******************************************************************************/
 /* OBJECTS                                                                    */
 /******************************************************************************/
-VAR(module_Vkms, VKMS_VAR) Vkms;
-CONSTP2VAR(infEcuMClient, VKMS_VAR, VKMS_CONST) gptrinfEcuMClient_Vkms = &Vkms;
-CONSTP2VAR(infDcmClient,  VKMS_VAR, VKMS_CONST) gptrinfDcmClient_Vkms  = &Vkms;
-CONSTP2VAR(infSchMClient, VKMS_VAR, VKMS_CONST) gptrinfSchMClient_Vkms = &Vkms;
+VAR(module_Vkms, VKMS_VAR) Vkms(
+   {
+         0x0000
+      ,  0xFFFF
+      ,  0x01
+      ,  '0'
+      ,  '1'
+      ,  '0'
+   }
+);
 
 /******************************************************************************/
 /* FUNCTIONS                                                                  */
@@ -77,14 +79,6 @@ FUNC(void, VKMS_CODE) module_Vkms::InitFunction(void){
 
 FUNC(void, VKMS_CODE) module_Vkms::DeInitFunction(void){
    Vkms.IsInitDone = E_NOT_OK;
-}
-
-FUNC(void, VKMS_CODE) module_Vkms::GetVersionInfo(void){
-#if(STD_ON == Vkms_DevErrorDetect)
-//TBD: API parameter check
-   Det_ReportError(
-   );
-#endif
 }
 
 FUNC(void, VKMS_CODE) module_Vkms::MainFunction(void){
