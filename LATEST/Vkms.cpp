@@ -6,7 +6,7 @@
 /******************************************************************************/
 /* #INCLUDES                                                                  */
 /******************************************************************************/
-#include "module.hpp"
+#include "Module.hpp"
 #include "infVkms_EcuM.hpp"
 #include "infVkms_Dcm.hpp"
 #include "infVkms_SchM.hpp"
@@ -37,6 +37,9 @@ class module_Vkms:
    public:
       module_Vkms(Std_TypeVersionInfo lVersionInfo) : abstract_module(lVersionInfo){
       }
+      FUNC(void, _CODE) InitFunction(
+         CONSTP2CONST(CfgModule_TypeAbstract, _CONFIG_DATA, _APPL_CONST) lptrCfgModule
+      );
       FUNC(void, VKMS_CODE) InitFunction   (void);
       FUNC(void, VKMS_CODE) DeInitFunction (void);
       FUNC(void, VKMS_CODE) MainFunction   (void);
@@ -73,7 +76,19 @@ VAR(module_Vkms, VKMS_VAR) Vkms(
 /******************************************************************************/
 /* FUNCTIONS                                                                  */
 /******************************************************************************/
-FUNC(void, VKMS_CODE) module_Vkms::InitFunction(void){
+FUNC(void, VKMS_CODE) module_Vkms::InitFunction(
+   CONSTP2CONST(CfgVkms_Type, CFGVKMS_CONFIG_DATA, CFGVKMS_APPL_CONST) lptrCfgVkms
+){
+   if(NULL_PTR == lptrCfgVkms){
+#if(STD_ON == Vkms_DevErrorDetect)
+      Det_ReportError(
+      );
+#endif
+   }
+   else{
+// check lptrCfgVkms for memory faults
+// use PBcfg_Vkms as back-up configuration
+   }
    Vkms.IsInitDone = E_OK;
 }
 
