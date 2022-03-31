@@ -37,10 +37,9 @@ class module_Vkms:
    public:
       module_Vkms(Std_TypeVersionInfo lVersionInfo) : abstract_module(lVersionInfo){
       }
-      FUNC(void, _CODE) InitFunction(
-         CONSTP2CONST(CfgModule_TypeAbstract, _CONFIG_DATA, _APPL_CONST) lptrCfgModule
+      FUNC(void, VKMS_CODE) InitFunction(
+         CONSTP2CONST(CfgModule_TypeAbstract, VKMS_CONFIG_DATA, VKMS_APPL_CONST) lptrCfgModule
       );
-      FUNC(void, VKMS_CODE) InitFunction   (void);
       FUNC(void, VKMS_CODE) DeInitFunction (void);
       FUNC(void, VKMS_CODE) MainFunction   (void);
 };
@@ -77,23 +76,39 @@ VAR(module_Vkms, VKMS_VAR) Vkms(
 /* FUNCTIONS                                                                  */
 /******************************************************************************/
 FUNC(void, VKMS_CODE) module_Vkms::InitFunction(
-   CONSTP2CONST(CfgVkms_Type, CFGVKMS_CONFIG_DATA, CFGVKMS_APPL_CONST) lptrCfgVkms
+   CONSTP2CONST(CfgModule_TypeAbstract, VKMS_CONFIG_DATA, VKMS_APPL_CONST) lptrCfgModule
 ){
-   if(NULL_PTR == lptrCfgVkms){
+   if(E_OK == IsInitDone){
 #if(STD_ON == Vkms_DevErrorDetect)
       Det_ReportError(
       );
 #endif
    }
    else{
-// check lptrCfgVkms for memory faults
+      if(NULL_PTR == lptrCfgModule){
+#if(STD_ON == Vkms_DevErrorDetect)
+         Det_ReportError(
+         );
+#endif
+      }
+      else{
+// check lptrCfgModule for memory faults
 // use PBcfg_Vkms as back-up configuration
+      }
+      IsInitDone = E_OK;
    }
-   Vkms.IsInitDone = E_OK;
 }
 
 FUNC(void, VKMS_CODE) module_Vkms::DeInitFunction(void){
-   Vkms.IsInitDone = E_NOT_OK;
+   if(E_OK != IsInitDone){
+#if(STD_ON == Vkms_DevErrorDetect)
+      Det_ReportError(
+      );
+#endif
+   }
+   else{
+      IsInitDone = E_NOT_OK;
+   }
 }
 
 FUNC(void, VKMS_CODE) module_Vkms::MainFunction(void){
