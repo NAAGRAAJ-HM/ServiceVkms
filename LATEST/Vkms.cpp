@@ -78,6 +78,7 @@ VAR(module_Vkms, VKMS_VAR) Vkms(
 FUNC(void, VKMS_CODE) module_Vkms::InitFunction(
    CONSTP2CONST(CfgModule_TypeAbstract, VKMS_CONFIG_DATA, VKMS_APPL_CONST) lptrCfgModule
 ){
+#if(STD_ON == Vkms_InitCheck)
    if(E_OK == IsInitDone){
 #if(STD_ON == Vkms_DevErrorDetect)
       Det_ReportError(
@@ -85,6 +86,7 @@ FUNC(void, VKMS_CODE) module_Vkms::InitFunction(
 #endif
    }
    else{
+#endif
       if(NULL_PTR == lptrCfgModule){
 #if(STD_ON == Vkms_DevErrorDetect)
          Det_ReportError(
@@ -96,10 +98,13 @@ FUNC(void, VKMS_CODE) module_Vkms::InitFunction(
 // use PBcfg_Vkms as back-up configuration
       }
       IsInitDone = E_OK;
+#if(STD_ON == Vkms_InitCheck)
    }
+#endif
 }
 
 FUNC(void, VKMS_CODE) module_Vkms::DeInitFunction(void){
+#if(STD_ON == Vkms_InitCheck)
    if(E_OK != IsInitDone){
 #if(STD_ON == Vkms_DevErrorDetect)
       Det_ReportError(
@@ -107,11 +112,26 @@ FUNC(void, VKMS_CODE) module_Vkms::DeInitFunction(void){
 #endif
    }
    else{
+#endif
       IsInitDone = E_NOT_OK;
+#if(STD_ON == Vkms_InitCheck)
    }
+#endif
 }
 
 FUNC(void, VKMS_CODE) module_Vkms::MainFunction(void){
+#if(STD_ON == Vkms_InitCheck)
+   if(E_OK != IsInitDone){
+#if(STD_ON == Vkms_DevErrorDetect)
+      Det_ReportError(
+      );
+#endif
+   }
+   else{
+#endif
+#if(STD_ON == Vkms_InitCheck)
+   }
+#endif
 }
 
 class class_Vkms_Unused{
