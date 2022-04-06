@@ -14,18 +14,18 @@
 /******************************************************************************/
 /* #DEFINES                                                                   */
 /******************************************************************************/
-#define VKMS_AR_RELEASE_MAJOR_VERSION                                          4
-#define VKMS_AR_RELEASE_MINOR_VERSION                                          3
+#define VKMS_AR_RELEASE_VERSION_MAJOR                                          4
+#define VKMS_AR_RELEASE_VERSION_MINOR                                          3
 
 /******************************************************************************/
 /* MACROS                                                                     */
 /******************************************************************************/
-#if(VKMS_AR_RELEASE_MAJOR_VERSION != STD_AR_RELEASE_MAJOR_VERSION)
-   #error "Incompatible VKMS_AR_RELEASE_MAJOR_VERSION!"
+#if(VKMS_AR_RELEASE_VERSION_MAJOR != STD_AR_RELEASE_VERSION_MAJOR)
+   #error "Incompatible VKMS_AR_RELEASE_VERSION_MAJOR!"
 #endif
 
-#if(VKMS_AR_RELEASE_MINOR_VERSION != STD_AR_RELEASE_MINOR_VERSION)
-   #error "Incompatible VKMS_AR_RELEASE_MINOR_VERSION!"
+#if(VKMS_AR_RELEASE_VERSION_MINOR != STD_AR_RELEASE_VERSION_MINOR)
+   #error "Incompatible VKMS_AR_RELEASE_VERSION_MINOR!"
 #endif
 
 /******************************************************************************/
@@ -63,8 +63,10 @@ CONSTP2VAR(infSchMClient, VKMS_VAR, VKMS_CONST) gptrinfSchMClient_Vkms = &Vkms;
 /******************************************************************************/
 VAR(module_Vkms, VKMS_VAR) Vkms(
    {
-         0x0000
-      ,  0xFFFF
+         VKMS_AR_RELEASE_VERSION_MAJOR
+      ,  VKMS_AR_RELEASE_VERSION_MINOR
+      ,  0x00
+      ,  0xFF
       ,  0x01
       ,  '0'
       ,  '1'
