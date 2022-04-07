@@ -101,8 +101,8 @@ FUNC(void, VKMS_CODE) module_Vkms::InitFunction(
             lptrCfg = lptrCfgModule;
          }
          else{
-// use PBcfg_CanIf as back-up configuration
-            lptrCfg = PBcfg_CanIf;
+// use PBcfgCanIf as back-up configuration
+            lptrCfg = &PBcfgVkms;
          }
       }
       IsInitDone = E_OK;
