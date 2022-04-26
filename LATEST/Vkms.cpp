@@ -31,8 +31,13 @@
 /******************************************************************************/
 /* TYPEDEFS                                                                   */
 /******************************************************************************/
+class class_Vkms_Functionality{
+   public:
+};
+
 class module_Vkms:
       public abstract_module
+   ,  public class_Vkms_Functionality
 {
    public:
       module_Vkms(Std_TypeVersionInfo lVersionInfo) : abstract_module(lVersionInfo){
@@ -84,6 +89,10 @@ FUNC(void, VKMS_CODE) module_Vkms::InitFunction(
    if(E_OK == IsInitDone){
 #if(STD_ON == Vkms_DevErrorDetect)
       Det_ReportError(
+      0 //TBD: IdModule
+   ,  0 //TBD: IdInstance
+   ,  0 //TBD: IdApi
+   ,  0 //TBD: IdError
       );
 #endif
    }
@@ -92,6 +101,10 @@ FUNC(void, VKMS_CODE) module_Vkms::InitFunction(
       if(NULL_PTR == lptrCfgModule){
 #if(STD_ON == Vkms_DevErrorDetect)
          Det_ReportError(
+      0 //TBD: IdModule
+   ,  0 //TBD: IdInstance
+   ,  0 //TBD: IdApi
+   ,  0 //TBD: IdError
          );
 #endif
       }
@@ -116,6 +129,10 @@ FUNC(void, VKMS_CODE) module_Vkms::DeInitFunction(void){
    if(E_OK != IsInitDone){
 #if(STD_ON == Vkms_DevErrorDetect)
       Det_ReportError(
+      0 //TBD: IdModule
+   ,  0 //TBD: IdInstance
+   ,  0 //TBD: IdApi
+   ,  0 //TBD: IdError
       );
 #endif
    }
@@ -132,6 +149,10 @@ FUNC(void, VKMS_CODE) module_Vkms::MainFunction(void){
    if(E_OK != IsInitDone){
 #if(STD_ON == Vkms_DevErrorDetect)
       Det_ReportError(
+      0 //TBD: IdModule
+   ,  0 //TBD: IdInstance
+   ,  0 //TBD: IdApi
+   ,  0 //TBD: IdError
       );
 #endif
    }
@@ -141,10 +162,6 @@ FUNC(void, VKMS_CODE) module_Vkms::MainFunction(void){
    }
 #endif
 }
-
-class class_Vkms_Unused{
-   public:
-};
 
 /******************************************************************************/
 /* EOF                                                                        */
