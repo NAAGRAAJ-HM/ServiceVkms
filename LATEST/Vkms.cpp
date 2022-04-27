@@ -31,10 +31,6 @@
 /******************************************************************************/
 /* TYPEDEFS                                                                   */
 /******************************************************************************/
-class class_Vkms_Functionality{
-   public:
-};
-
 class module_Vkms:
       public abstract_module
    ,  public class_Vkms_Functionality
