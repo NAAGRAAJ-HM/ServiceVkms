@@ -7,6 +7,7 @@
 /* #INCLUDES                                                                  */
 /******************************************************************************/
 #include "Module.hpp"
+#include "Vkms_core.hpp"
 #include "infVkms_EcuM.hpp"
 #include "infVkms_Dcm.hpp"
 #include "infVkms_SchM.hpp"
