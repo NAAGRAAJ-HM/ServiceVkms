@@ -7,10 +7,9 @@
 /* #INCLUDES                                                                  */
 /******************************************************************************/
 #include "Module.hpp"
+#include "CfgVkms.hpp"
 #include "Vkms_core.hpp"
-#include "infVkms_EcuM.hpp"
-#include "infVkms_Dcm.hpp"
-#include "infVkms_SchM.hpp"
+#include "infVkms.hpp"
 
 /******************************************************************************/
 /* #DEFINES                                                                   */
@@ -44,6 +43,7 @@ class module_Vkms:
       );
       FUNC(void, VKMS_CODE) DeInitFunction (void);
       FUNC(void, VKMS_CODE) MainFunction   (void);
+      VKMS_CORE_FUNCTIONALITIES
 };
 
 extern VAR(module_Vkms, VKMS_VAR) Vkms;
@@ -58,7 +58,6 @@ CONSTP2VAR(infSchMClient, VKMS_VAR, VKMS_CONST) gptrinfSchMClient_Vkms = &Vkms;
 /******************************************************************************/
 /* PARAMS                                                                     */
 /******************************************************************************/
-#include "CfgVkms.hpp"
 
 /******************************************************************************/
 /* OBJECTS                                                                    */
