@@ -89,7 +89,10 @@ FUNC(void, VKMS_CODE) module_Vkms::InitFunction(
    CONSTP2CONST(CfgModule_TypeAbstract, VKMS_CONFIG_DATA, VKMS_APPL_CONST) lptrCfgModule
 ){
 #if(STD_ON == Vkms_InitCheck)
-   if(E_OK != IsInitDone){
+   if(
+         E_OK
+      != IsInitDone
+   ){
 #endif
       if(NULL_PTR != lptrCfgModule){
          if(STD_HIGH){
@@ -127,7 +130,10 @@ FUNC(void, VKMS_CODE) module_Vkms::InitFunction(
 
 FUNC(void, VKMS_CODE) module_Vkms::DeInitFunction(void){
 #if(STD_ON == Vkms_InitCheck)
-   if(E_OK == IsInitDone){
+   if(
+         E_OK
+      == IsInitDone
+   ){
 #endif
 #if(STD_ON == Vkms_InitCheck)
       IsInitDone = E_NOT_OK;
@@ -147,7 +153,10 @@ FUNC(void, VKMS_CODE) module_Vkms::DeInitFunction(void){
 
 FUNC(void, VKMS_CODE) module_Vkms::MainFunction(void){
 #if(STD_ON == Vkms_InitCheck)
-   if(E_OK == IsInitDone){
+   if(
+         E_OK
+      == IsInitDone
+   ){
 #endif
 #if(STD_ON == Vkms_InitCheck)
    }
