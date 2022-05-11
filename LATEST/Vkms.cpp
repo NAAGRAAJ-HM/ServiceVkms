@@ -9,7 +9,7 @@
 #include "Module.hpp"
 #include "CfgVkms.hpp"
 #include "Vkms_core.hpp"
-#include "infVkms.hpp"
+#include "infVkms_Exp.hpp"
 
 /******************************************************************************/
 /* #DEFINES                                                                   */
@@ -32,6 +32,7 @@
 /* TYPEDEFS                                                                   */
 /******************************************************************************/
 class module_Vkms:
+   INTERFACES_EXPORTED_VKMS
       public abstract_module
    ,  public class_Vkms_Functionality
 {
