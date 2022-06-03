@@ -10,6 +10,7 @@
 #include "CfgVkms.hpp"
 #include "Vkms_core.hpp"
 #include "infVkms_Exp.hpp"
+#include "infVkms_Imp.hpp"
 
 /******************************************************************************/
 /* #DEFINES                                                                   */
