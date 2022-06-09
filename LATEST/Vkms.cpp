@@ -74,10 +74,10 @@ CONSTP2VAR(infSchMClient, VKMS_VAR, VKMS_CONST) gptrinfSchMClient_Vkms = &Vkms;
 VAR(module_Vkms, VKMS_VAR) Vkms(
    {
 #if(STD_ON == _ReSIM)
-         "Vkms"
+         "Vkms",
 #else
 #endif
-      ,  VKMS_AR_RELEASE_VERSION_MAJOR
+         VKMS_AR_RELEASE_VERSION_MAJOR
       ,  VKMS_AR_RELEASE_VERSION_MINOR
       ,  0x00
       ,  0xFF
