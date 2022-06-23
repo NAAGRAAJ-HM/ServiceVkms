@@ -130,7 +130,9 @@ FUNC(void, VKMS_CODE) module_Vkms::InitFunction(
 #endif
 }
 
-FUNC(void, VKMS_CODE) module_Vkms::DeInitFunction(void){
+FUNC(void, VKMS_CODE) module_Vkms::DeInitFunction(
+   void
+){
 #if(STD_ON == Vkms_InitCheck)
    if(
          E_OK
@@ -153,7 +155,9 @@ FUNC(void, VKMS_CODE) module_Vkms::DeInitFunction(void){
 #endif
 }
 
-FUNC(void, VKMS_CODE) module_Vkms::MainFunction(void){
+FUNC(void, VKMS_CODE) module_Vkms::MainFunction(
+   void
+){
 #if(STD_ON == Vkms_InitCheck)
    if(
          E_OK
