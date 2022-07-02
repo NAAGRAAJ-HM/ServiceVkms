@@ -82,12 +82,7 @@ FUNC(void, VKMS_CODE) module_Vkms::InitFunction(
    ){
 #endif
       if(NULL_PTR != lptrCfgModule){
-         if(STD_HIGH){
-            lptrCfg = lptrCfgModule;
-         }
-         else{
-            lptrCfg = &PBcfgVkms;
-         }
+         lptrCfg = lptrCfgModule;
       }
       else{
 #if(STD_ON == Vkms_DevErrorDetect)
