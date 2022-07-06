@@ -7,9 +7,7 @@
 /* #INCLUDES                                                                  */
 /******************************************************************************/
 #include "Module.hpp"
-#include "CfgVkms.hpp"
-#include "Vkms_core.hpp"
-#include "infVkms_Exp.hpp"
+#include "Vkms.hpp"
 #include "infVkms_Imp.hpp"
 
 /******************************************************************************/
@@ -32,26 +30,6 @@
 /******************************************************************************/
 /* TYPEDEFS                                                                   */
 /******************************************************************************/
-class module_Vkms:
-      INTERFACES_EXPORTED_VKMS
-      public abstract_module
-   ,  public class_Vkms_Functionality
-{
-   private:
-/******************************************************************************/
-/* OBJECTS                                                                    */
-/******************************************************************************/
-
-   public:
-      FUNC(void, VKMS_CODE) InitFunction(
-         CONSTP2CONST(CfgModule_TypeAbstract, VKMS_CONFIG_DATA, VKMS_APPL_CONST) lptrCfgModule
-      );
-      FUNC(void, VKMS_CODE) DeInitFunction (void);
-      FUNC(void, VKMS_CODE) MainFunction   (void);
-      VKMS_CORE_FUNCTIONALITIES
-};
-
-extern VAR(module_Vkms, VKMS_VAR) Vkms;
 
 /******************************************************************************/
 /* CONSTS                                                                     */
