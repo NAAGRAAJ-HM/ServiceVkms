@@ -8,9 +8,7 @@
 /* #INCLUDES                                                                  */
 /******************************************************************************/
 #include "infVkms_EcuM.hpp"
-#include "infVkms_Dcm.hpp"
 #include "infVkms_Det.hpp"
-#include "infVkms_SchM.hpp"
 
 /******************************************************************************/
 /* #DEFINES                                                                   */
