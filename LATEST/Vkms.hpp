@@ -7,6 +7,7 @@
 /******************************************************************************/
 /* #INCLUDES                                                                  */
 /******************************************************************************/
+#include "ConstVkms.hpp"
 #include "CfgVkms.hpp"
 #include "Vkms_core.hpp"
 #include "infVkms_Exp.hpp"
@@ -31,13 +32,15 @@ class module_Vkms:
 /******************************************************************************/
 /* OBJECTS                                                                    */
 /******************************************************************************/
+      const ConstVkms_Type* lptrConst = (ConstVkms_Type*)NULL_PTR;
 
    public:
 /******************************************************************************/
 /* FUNCTIONS                                                                  */
 /******************************************************************************/
       FUNC(void, VKMS_CODE) InitFunction(
-         CONSTP2CONST(CfgModule_TypeAbstract, VKMS_CONFIG_DATA, VKMS_APPL_CONST) lptrCfgModule
+            CONSTP2CONST(ConstModule_TypeAbstract, VKMS_CONST,       VKMS_APPL_CONST) lptrConstModule
+         ,  CONSTP2CONST(CfgModule_TypeAbstract,   VKMS_CONFIG_DATA, VKMS_APPL_CONST) lptrCfgModule
       );
       FUNC(void, VKMS_CODE) DeInitFunction (void);
       FUNC(void, VKMS_CODE) MainFunction   (void);

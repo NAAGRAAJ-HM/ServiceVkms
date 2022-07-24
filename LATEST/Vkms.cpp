@@ -48,7 +48,8 @@ VAR(module_Vkms, VKMS_VAR) Vkms;
 /* FUNCTIONS                                                                  */
 /******************************************************************************/
 FUNC(void, VKMS_CODE) module_Vkms::InitFunction(
-   CONSTP2CONST(CfgModule_TypeAbstract, VKMS_CONFIG_DATA, VKMS_APPL_CONST) lptrCfgModule
+      CONSTP2CONST(ConstModule_TypeAbstract, VKMS_CONST,       VKMS_APPL_CONST) lptrConstModule
+   ,  CONSTP2CONST(CfgModule_TypeAbstract,   VKMS_CONFIG_DATA, VKMS_APPL_CONST) lptrCfgModule
 ){
 #if(STD_ON == Vkms_InitCheck)
    if(
@@ -56,8 +57,12 @@ FUNC(void, VKMS_CODE) module_Vkms::InitFunction(
       != IsInitDone
    ){
 #endif
-      if(NULL_PTR != lptrCfgModule){
-         lptrCfg = lptrCfgModule;
+      if(
+            (NULL_PTR != lptrConstModule)
+         && (NULL_PTR != lptrCfgModule)
+      ){
+         lptrConst = lptrConstModule;
+         lptrCfg   = lptrCfgModule;
       }
       else{
 #if(STD_ON == Vkms_DevErrorDetect)
