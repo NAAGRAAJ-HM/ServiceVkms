@@ -61,7 +61,7 @@ FUNC(void, VKMS_CODE) module_Vkms::InitFunction(
             (NULL_PTR != lptrConstModule)
          && (NULL_PTR != lptrCfgModule)
       ){
-         lptrConst = lptrConstModule;
+         lptrConst = (const ConstVkms_Type*)lptrConstModule;
          lptrCfg   = lptrCfgModule;
       }
       else{
