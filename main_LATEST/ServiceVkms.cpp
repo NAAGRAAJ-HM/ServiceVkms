@@ -13,18 +13,18 @@
 /******************************************************************************/
 /* #DEFINES                                                                   */
 /******************************************************************************/
-#define VKMS_AR_RELEASE_VERSION_MAJOR                                          4
-#define VKMS_AR_RELEASE_VERSION_MINOR                                          3
+#define SERVICEVKMS_AR_RELEASE_VERSION_MAJOR                                          4
+#define SERVICEVKMS_AR_RELEASE_VERSION_MINOR                                          3
 
 /******************************************************************************/
 /* MACROS                                                                     */
 /******************************************************************************/
-#if(VKMS_AR_RELEASE_VERSION_MAJOR != STD_AR_RELEASE_VERSION_MAJOR)
-   #error "Incompatible VKMS_AR_RELEASE_VERSION_MAJOR!"
+#if(SERVICEVKMS_AR_RELEASE_VERSION_MAJOR != STD_AR_RELEASE_VERSION_MAJOR)
+   #error "Incompatible SERVICEVKMS_AR_RELEASE_VERSION_MAJOR!"
 #endif
 
-#if(VKMS_AR_RELEASE_VERSION_MINOR != STD_AR_RELEASE_VERSION_MINOR)
-   #error "Incompatible VKMS_AR_RELEASE_VERSION_MINOR!"
+#if(SERVICEVKMS_AR_RELEASE_VERSION_MINOR != STD_AR_RELEASE_VERSION_MINOR)
+   #error "Incompatible SERVICEVKMS_AR_RELEASE_VERSION_MINOR!"
 #endif
 
 /******************************************************************************/
@@ -42,14 +42,14 @@
 /******************************************************************************/
 /* OBJECTS                                                                    */
 /******************************************************************************/
-VAR(module_ServiceVkms, VKMS_VAR) ServiceVkms;
+VAR(module_ServiceVkms, SERVICEVKMS_VAR) ServiceVkms;
 
 /******************************************************************************/
 /* FUNCTIONS                                                                  */
 /******************************************************************************/
-FUNC(void, VKMS_CODE) module_ServiceVkms::InitFunction(
-      CONSTP2CONST(ConstModule_TypeAbstract, VKMS_CONST,       VKMS_APPL_CONST) lptrConstModule
-   ,  CONSTP2CONST(CfgModule_TypeAbstract,   VKMS_CONFIG_DATA, VKMS_APPL_CONST) lptrCfgModule
+FUNC(void, SERVICEVKMS_CODE) module_ServiceVkms::InitFunction(
+      CONSTP2CONST(ConstModule_TypeAbstract, SERVICEVKMS_CONST,       SERVICEVKMS_APPL_CONST) lptrConstModule
+   ,  CONSTP2CONST(CfgModule_TypeAbstract,   SERVICEVKMS_CONFIG_DATA, SERVICEVKMS_APPL_CONST) lptrCfgModule
 ){
 #if(STD_ON == ServiceVkms_InitCheck)
    if(
@@ -83,14 +83,14 @@ FUNC(void, VKMS_CODE) module_ServiceVkms::InitFunction(
             0 //TBD: IdModule
          ,  0 //TBD: IdInstance
          ,  0 //TBD: IdApi
-         ,  VKMS_E_UNINIT
+         ,  SERVICEVKMS_E_UNINIT
       );
 #endif
    }
 #endif
 }
 
-FUNC(void, VKMS_CODE) module_ServiceVkms::DeInitFunction(
+FUNC(void, SERVICEVKMS_CODE) module_ServiceVkms::DeInitFunction(
    void
 ){
 #if(STD_ON == ServiceVkms_InitCheck)
@@ -108,14 +108,14 @@ FUNC(void, VKMS_CODE) module_ServiceVkms::DeInitFunction(
             0 //TBD: IdModule
          ,  0 //TBD: IdInstance
          ,  0 //TBD: IdApi
-         ,  VKMS_E_UNINIT
+         ,  SERVICEVKMS_E_UNINIT
       );
 #endif
    }
 #endif
 }
 
-FUNC(void, VKMS_CODE) module_ServiceVkms::MainFunction(
+FUNC(void, SERVICEVKMS_CODE) module_ServiceVkms::MainFunction(
    void
 ){
 #if(STD_ON == ServiceVkms_InitCheck)
@@ -132,7 +132,7 @@ FUNC(void, VKMS_CODE) module_ServiceVkms::MainFunction(
             0 //TBD: IdModule
          ,  0 //TBD: IdInstance
          ,  0 //TBD: IdApi
-         ,  VKMS_E_UNINIT
+         ,  SERVICEVKMS_E_UNINIT
       );
 #endif
    }

@@ -12,9 +12,9 @@
 /******************************************************************************/
 /* #DEFINES                                                                   */
 /******************************************************************************/
-#define VKMS_CORE_FUNCTIONALITIES                                              \
+#define SERVICEVKMS_CORE_FUNCTIONALITIES                                              \
 
-#define VKMS_CORE_FUNCTIONALITIES_VIRTUAL                                      \
+#define SERVICEVKMS_CORE_FUNCTIONALITIES_VIRTUAL                                      \
 
 /******************************************************************************/
 /* MACROS                                                                     */
@@ -25,7 +25,7 @@
 /******************************************************************************/
 class class_ServiceVkms_Functionality{
    public:
-      VKMS_CORE_FUNCTIONALITIES_VIRTUAL
+      SERVICEVKMS_CORE_FUNCTIONALITIES_VIRTUAL
 };
 
 /******************************************************************************/

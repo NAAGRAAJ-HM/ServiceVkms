@@ -21,7 +21,7 @@
 /* TYPEDEFS                                                                   */
 /******************************************************************************/
 typedef enum{
-      VKMS_E_UNINIT
+      SERVICEVKMS_E_UNINIT
 }ServiceVkms_TypeServiceDetErrorCode;
 
 /******************************************************************************/
