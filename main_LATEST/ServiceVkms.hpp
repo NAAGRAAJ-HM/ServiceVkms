@@ -24,7 +24,7 @@
 /* TYPEDEFS                                                                   */
 /******************************************************************************/
 class module_ServiceVkms:
-      INTERFACES_EXMCALPORTED_SERVICEVKMS
+      INTERFACES_EXPORTED_SERVICEVKMS
       public abstract_module
    ,  public class_ServiceVkms_Functionality
 {
