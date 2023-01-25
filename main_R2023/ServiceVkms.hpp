@@ -1,13 +1,13 @@
 #pragma once
 /******************************************************************************/
-/* File   : ServiceVkms.hpp                                                          */
+/* File   : ServiceVkms.hpp                                                   */
 /* Author : NAGARAJA HM (c) since 1982. All rights reserved.                  */
 /******************************************************************************/
 
 /******************************************************************************/
 /* #INCLUDES                                                                  */
 /******************************************************************************/
-#include "ConstServiceVkms.hpp"
+#include "infServiceVkms_ServiceNvM_Types.hpp"
 #include "CfgServiceVkms.hpp"
 #include "ServiceVkms_core.hpp"
 #include "infServiceVkms_Exp.hpp"
